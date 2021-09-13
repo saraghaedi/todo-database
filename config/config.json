@@ -1,0 +1,19 @@
+{
+  "development": {
+    "url": "postgres://ldalxzdt:U05bcSgVAufa6_AoRqEekk0hY88jW5Yo@hattie.db.elephantsql.com/ldalxzdt"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
