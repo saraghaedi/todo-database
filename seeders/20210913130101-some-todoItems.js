@@ -11,6 +11,7 @@ module.exports = {
           important: true,
           createdAt: new Date(),
           updatedAt: new Date(),
+          todoListId: 1,
         },
         {
           task: "item2",
@@ -18,6 +19,7 @@ module.exports = {
           important: false,
           createdAt: new Date(),
           updatedAt: new Date(),
+          todoListId: 2,
         },
         {
           task: "item3",
@@ -25,6 +27,7 @@ module.exports = {
           important: true,
           createdAt: new Date(),
           updatedAt: new Date(),
+          todoListId: 2,
         },
         {
           task: "item4",
@@ -32,6 +35,7 @@ module.exports = {
           important: true,
           createdAt: new Date(),
           updatedAt: new Date(),
+          todoListId: 1,
         },
       ],
       {}
