@@ -1,4 +1,4 @@
-const { user, todoItem, todoList } = require("./models");
+const { user, todoItem, todoList, tag } = require("./models");
 
 // async function listsWithUsers() {
 //   const lists = await todoList.findAll({
@@ -59,21 +59,34 @@ const { user, todoItem, todoList } = require("./models");
 
 // Get one user by id with his lists, which also contain their belonging TodoItem's task attribute.
 
-async function listOfOneUserWithDetails(userId) {
+// async function listOfOneUserWithDetails(userId) {
+//   try {
+//     const userList = await user.findOne({
+//       where: { id: userId },
+//       include: [
+//         {
+//           model: todoList,
+//           include: [{ model: todoItem, attributes: ["task"] }],
+//         },
+//       ],
+//     });
+//     return userList.toJSON();
+//   } catch (e) {
+//     console.log(e.message);
+//   }
+// }
+
+// listOfOneUserWithDetails(1).then((user) => console.log(user));
+
+//finds all todoItems with their corresponding tags.
+
+async function todoitemsWithTags() {
   try {
-    const userList = await user.findOne({
-      where: { id: userId },
-      include: [
-        {
-          model: todoList,
-          include: [{ model: todoItem, attributes: ["task"] }],
-        },
-      ],
-    });
-    return userList.toJSON();
+    const list = await todoItem.findAll({ include: [tag] });
+    return list.map((item) => item.toJSON());
   } catch (e) {
     console.log(e.message);
   }
 }
 
-listOfOneUserWithDetails(1).then((user) => console.log(user));
+todoitemsWithTags().then((item) => console.log(item));
